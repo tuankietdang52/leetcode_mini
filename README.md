@@ -1,4 +1,4 @@
-# Leetcode MiniWorkspace
+# Leetcode Mini
 Solve leetcode problem with write, test your custom test case on Visual Studio Code, c++ language
 
 # Write Your Test Case
