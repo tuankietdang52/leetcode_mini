@@ -1,20 +1,16 @@
 #include "test.h"
 
+void resultAnnouncement(bool isPassed, int caseIndex){
+    if (isPassed){
+        cout << GREEN << "Case " << caseIndex << " Passed " << "\u2713" << RESET << endl;
+    }
+    else cout << RED << "Case " << caseIndex << " Failed "  << "\u2717" << RESET << endl;
+}
+
 void Test::testing(){
-    if (case1()){
-        cout << GREEN << "Case 1 Passed " << "\u2713" << RESET << endl;
-    }
-    else cout << RED << "Case 1 Failed " << "\u2717" << RESET << endl;
-
-    if (case2()){
-        cout << GREEN << "Case 2 Passed " << "\u2713" << RESET << endl;
-    }
-    else cout << RED << "Case 2 Failed " << "\u2717" << RESET << endl;
-
-    if (case3()){
-        cout << GREEN << "Case 3 Passed " << "\u2713" << RESET << endl;
-    }
-    else cout << RED << "Case 3 Failed " << "\u2717" << RESET << endl;
+    resultAnnouncement(case1(), 1);
+    resultAnnouncement(case2(), 2);
+    resultAnnouncement(case3(), 3);
 }
 
 bool Test::case1(){

@@ -8,6 +8,11 @@ using namespace std;
 
 #define RED "\033[31m" 
 
+/// @brief 
+/// @tparam T1 return type
+/// @tparam T2 parameter 1 type
+/// @tparam T3 parameter 2 type
+/// @tparam T4 parameter 3 type
 template <typename T1, typename T2, typename T3, typename T4> 
 class TestCase{
 public:
