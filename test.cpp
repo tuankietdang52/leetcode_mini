@@ -13,35 +13,39 @@ void Test::testing(){
     resultAnnouncement(case3(), 3);
 }
 
+/// @brief 
+/// @tparam T1 return type
+/// @tparam T2 parameter 1 type
+/// @tparam T3 parameter 2 type
+/// @tparam T4 parameter 3 type
+template <typename T1, typename T2, typename T3, typename T4>
+bool runTestCase(T1 expected, T2 para1, T3 para2 = 0, T4 para3 = 0){
+    TestCase<T1, T2, T3, T4> testCase(expected);
+    testCase.run(para1, para2, para3);
+
+    return testCase.isPassed();
+}
+
 bool Test::case1(){
     //example of using a testcase
     vector<int> para = {1,2,2,3,4,5,1,1,1,1};
     int expected = 7;
    
-    TestCase<int, vector<int>, NONE, NONE> testCase(expected);
-    testCase.run(para);
-
-    return testCase.isPassed();
+    return runTestCase<int, vector<int>, NONE, NONE>(expected, para);
 }
 
 bool Test::case2(){
     vector<int> para = {1,2,3,4};
     int expected = 2;
    
-    TestCase<int, vector<int>, decltype(nullptr), decltype(nullptr)> testCase(expected);
-    testCase.run(para);
-
-    return testCase.isPassed();
+    return runTestCase<int, vector<int>, NONE, NONE>(expected, para);
 }
 
 bool Test::case3(){
     vector<int> para = {1,1,1,1};
     int expected = 0;
    
-    TestCase<int, vector<int>, decltype(nullptr), decltype(nullptr)> testCase(expected);
-    testCase.run(para);
-
-    return testCase.isPassed();
+    return runTestCase<int, vector<int>, NONE, NONE>(expected, para);
 }
 
 int main(int argc, char const *argv[])

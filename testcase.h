@@ -21,7 +21,7 @@ public:
     Solution<T1, T2, T3, T4> sol;
 
     TestCase(T1 expected);
-    void run(T2 para1, T3 para2 = 0, T4 para3 = 0);
+    void run(T2 para1, T3 para2, T4 para3);
     bool isPassed();
 };
 
