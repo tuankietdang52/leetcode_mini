@@ -2,6 +2,7 @@
 
 // include cpp file because testcase file are using template
 #include "testcase.cpp"
+#include "testcasevector.cpp"
 
 using namespace std;
 
@@ -20,6 +21,12 @@ public:
     bool case1();
     bool case2();
     bool case3();
+    
+    template <typename T1, typename T2, typename T3, typename T4>
+    bool runTestCase(T1 expected, T2 para1, T3 para2 = 0, T4 para3 = 0);
+    
+    template <typename T1, typename T2, typename T3, typename T4>
+    bool runTestCaseVector(vector<T1> expected, T2 para1, T3 para2 = 0, T4 para3 = 0);
 };
 
 #endif
