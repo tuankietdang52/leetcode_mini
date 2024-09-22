@@ -16,6 +16,8 @@ public:
     T1 expected;
     T1 result;
 
+    std::chrono::time_point<std::chrono::system_clock> start, endtime;
+
     Code<T1, T2, T3, T4> code;
 
     TestCase(T1 expected);
@@ -23,6 +25,7 @@ public:
     void run(T2 para1, T3 para2, T4 para3) override;
     bool isPassed() override;
     pair<string, string> getStrExpectedandResult() override;
+    double getExcuteTime() override;
 };
 
 #endif

@@ -4,17 +4,17 @@
 
 void resultAnnouncement(bool isPassed, int caseIndex){
     if (isPassed){
-        cout << GREEN << "Case " << caseIndex << " Passed " << "\u2713" << RESET << endl;
+        cout << GREEN << "Case " << caseIndex << ": Passed " << "\u2713" << RESET << endl;
     }
-    else cout << RED << "Case " << caseIndex << " Failed "  << "\u2717" << RESET << endl;
+    else cout << RED << "Case " << caseIndex << ": Failed "  << "\u2717" << RESET << endl;
 
-    cout << "======================================\n";
+    cout << "===========================================\n";
 }
 
 void Test::testing(){
     resultAnnouncement(case1(), 1);
     resultAnnouncement(case2(), 2);
-    // resultAnnouncement(case3(), 3);
+    resultAnnouncement(case3(), 3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -23,6 +23,9 @@ void printExpectedAndResult(ICase<T1, T2, T3, T4>& testCase){
 
     cout << ans.first << endl;
     cout << ans.second << endl;
+
+    double excuteTime = testCase.getExcuteTime();
+    cout << PURPLE << "Excute Time: " << fixed << excuteTime << "s" << RESET << endl;
 }
 
 /// @brief 
@@ -56,26 +59,24 @@ bool Test::runTestCaseVector(vector<T1> expected, T2 para1, T3 para2, T4 para3){
 
 bool Test::case1(){
     //example of using a testcase
-    vector<int> nums = {13,23,12};
-    long long expected = 4;
+    string s = "1*2+3*4";
+    int expected = 14;
    
-    return runTestCase<long long, vector<int>, NONE, NONE>(expected, nums);
+    return runTestCase<int, string, NONE, NONE>(expected, s);
 }
 
 bool Test::case2(){
-    vector<int> nums = {10, 10, 10, 10};
-    long long expected = 0;
+    string s = " 3/2 ";
+    int expected = 1;
    
-    return runTestCase<long long, vector<int>, NONE, NONE>(expected, nums);
+    return runTestCase<int, string, NONE, NONE>(expected, s);
 }
 
 bool Test::case3(){
-    // vector<int> nums = {44,22,33,11,1};
-    // int threshold = 5;
-    // int expected = 44;
+    string s = " 3+5 / 2 ";
+    int expected = 5;
    
-    // return runTestCase<int, vector<int>, int, NONE>(expected, nums, threshold);
-    return false;
+    return runTestCase<int, string, NONE, NONE>(expected, s);
 }
 
 int main(int argc, char const *argv[])

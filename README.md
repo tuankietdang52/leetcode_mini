@@ -5,6 +5,7 @@ Solve leetcode problem with write, test your custom test case on Visual Studio C
 Write your own test case and testing it
 
 <b> T1 for return type and others for parameter </b>
+<b> if you want to return vector type. Use runTestCaseVector instead of runTestCase and T1 will be vector element type (vector<T1>) </b>
 ![image](https://github.com/user-attachments/assets/706ee0a4-a1c7-4f8e-bd32-49e4c603bb6f)
 
 If you want to add more parameter (up to 3 recently), you need to adjust code in code.cpp and testcase.cpp or just use vector :)

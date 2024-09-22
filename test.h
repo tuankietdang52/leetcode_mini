@@ -3,17 +3,12 @@
 // include cpp file because testcase file are using template
 #include "testcase.cpp"
 #include "testcasevector.cpp"
+#include "config/config.cpp"
 
 using namespace std;
 
 #ifndef TEST_H
 #define TEST_H
-
-#define RESET  "\033[0m"
-#define RED    "\033[31m"      /* Red */
-#define GREEN  "\033[32m"      /* Green */
-
-#define NONE int
 
 class Test{
 public:

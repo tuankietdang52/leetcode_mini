@@ -18,11 +18,14 @@ public:
 
     Code<vector<T1>, T2, T3, T4> code;
 
+    std::chrono::time_point<std::chrono::system_clock> start, endtime;
+
     TestCaseVector(vector<T1> expected);
 
     void run(T2 para1, T3 para2, T4 para3) override;
     bool isPassed() override;
     pair<string, string> getStrExpectedandResult() override;
+    double getExcuteTime() override;
 };
 
 #endif
